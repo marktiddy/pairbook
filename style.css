@@ -1,0 +1,78 @@
+/* Pairbook site. Indigo to match the app icon. Colours pass WCAG AA in light and dark. */
+:root {
+  --brand: #4338CA;
+  --brand-soft: #EEF0FF;
+  --text: #1C1C1E;
+  --muted: #5E5E63;
+  --bg: #FFFFFF;
+  --card: #F2F2F7;
+  --radius: 20px;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand: #A5B4FC;
+    --brand-soft: #1E1B4B;
+    --text: #F5F5F7;
+    --muted: #AEAEB2;
+    --bg: #000000;
+    --card: #1C1C1E;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+a { color: var(--brand); }
+a:focus-visible, .button:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+header.site { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+header.site .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 20px; color: var(--text); text-decoration: none; }
+header.site .brand img { width: 40px; height: 40px; border-radius: 10px; }
+header.site nav a { margin-left: 20px; text-decoration: none; color: var(--muted); font-weight: 500; }
+header.site nav a:hover { color: var(--brand); }
+.hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; padding: 48px 0 64px; }
+.hero h1 { font-size: clamp(36px, 6vw, 56px); line-height: 1.08; margin: 0 0 16px; letter-spacing: -0.02em; }
+.hero p.lead { font-size: 21px; color: var(--muted); margin: 0 0 28px; }
+.hero img.phone { width: 100%; max-width: 340px; justify-self: center; border-radius: 36px; box-shadow: 0 20px 60px rgba(67, 56, 202, 0.25); }
+.button {
+  display: inline-block; padding: 14px 26px; border-radius: 999px; font-weight: 600; text-decoration: none;
+  background: #4338CA; color: #FFFFFF;
+}
+.button.secondary { background: var(--brand-soft); color: var(--brand); margin-left: 8px; }
+.note { font-size: 14px; color: var(--muted); margin-top: 12px; }
+section { padding: 56px 0; }
+section h2 { font-size: clamp(28px, 4vw, 38px); margin: 0 0 12px; letter-spacing: -0.01em; }
+section p.intro { color: var(--muted); font-size: 19px; max-width: 680px; margin: 0 0 32px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.card { background: var(--card); border-radius: var(--radius); padding: 24px; }
+.card h3 { margin: 0 0 8px; font-size: 19px; }
+.card p { margin: 0; color: var(--muted); }
+.card .icon { font-size: 28px; margin-bottom: 8px; display: block; }
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.shots figure { margin: 0; }
+.shots img { width: 100%; border-radius: 28px; display: block; }
+.shots figcaption { text-align: center; color: var(--muted); font-size: 15px; margin-top: 10px; }
+.pricing { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.pricing .card.pro { outline: 2px solid var(--brand); }
+.pricing ul { padding-left: 20px; margin: 12px 0 0; color: var(--muted); }
+.prose { max-width: 720px; }
+.prose h1 { font-size: 40px; margin: 24px 0 8px; }
+.prose h2 { font-size: 24px; margin-top: 36px; }
+.prose .updated { color: var(--muted); }
+details { background: var(--card); border-radius: 14px; padding: 16px 20px; margin-bottom: 12px; }
+details summary { font-weight: 600; cursor: pointer; }
+details p, details ol, details ul { color: var(--muted); }
+footer.site { border-top: 1px solid var(--card); padding: 32px 0 48px; color: var(--muted); font-size: 15px; }
+footer.site a { color: var(--muted); margin-right: 16px; }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 16px; top: 16px; background: var(--bg); padding: 8px 12px; z-index: 10; }
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; padding-top: 16px; }
+  .hero img.phone { max-width: 260px; }
+  .pricing { grid-template-columns: 1fr; }
+  header.site nav a { margin-left: 12px; font-size: 15px; }
+}

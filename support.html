@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <title>Support · Pairbook</title>
+  <meta name="description" content="Help with Pairbook: scanning codes, re-pairing accessories, sync, purchases and privacy.">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="./"><img src="images/icon.png" alt="" width="40" height="40">Pairbook</a>
+    <nav aria-label="Main">
+      <a href="./#features">Features</a>
+      <a href="./#pricing">Pricing</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+</div>
+<main id="main">
+  <div class="wrap prose">
+    <h1>Support</h1>
+    <p>Answers to common questions. Still stuck? Email <a href="mailto:support@example.com?subject=Pairbook%20support">support@example.com</a> and include your device and iOS version. <strong>Never send a setup code by email.</strong></p>
+
+    <h2>Getting started</h2>
+    <details>
+      <summary>How do I add a code?</summary>
+      <ol>
+        <li>Tap <strong>+</strong> (Add Code).</li>
+        <li>Choose <strong>Scan with Camera</strong> and centre the QR code or the printed digits in the frame. You can also choose a photo, or type the code.</li>
+        <li>Check the code against the sticker, turn on <strong>This matches the sticker</strong>, choose the accessory it belongs to, and tap <strong>Save</strong>.</li>
+      </ol>
+    </details>
+    <details>
+      <summary>Why does it say a code isn&rsquo;t valid?</summary>
+      <p>Pairbook checks every code. HomeKit never issues codes like 111-11-111 or 123-45-678, and Matter&rsquo;s 11- and 21-digit codes end in a check digit, so a misread digit shows up straight away. Scan again, or correct the digit.</p>
+    </details>
+    <details>
+      <summary>Why can&rsquo;t I see a QR code for some accessories?</summary>
+      <p>A QR can only be redrawn from a scanned QR: typed or printed codes don&rsquo;t contain everything the QR needs. Pairbook shows the digits instead, which Apple Home accepts when you choose to enter the code.</p>
+    </details>
+    <details>
+      <summary>My lights don&rsquo;t need codes?</summary>
+      <p>Accessories behind a bridge or hub (for example lights behind a lighting hub) don&rsquo;t have their own code: you re-pair the hub. Pairbook counts the hub once and shows which accessories it covers.</p>
+    </details>
+
+    <h2>Re-pairing an accessory</h2>
+    <details>
+      <summary>How do I add an accessory back to Apple Home?</summary>
+      <ol>
+        <li>Reset the accessory (Pairbook keeps its reset steps on its page).</li>
+        <li>Open its page in Pairbook and tap <strong>Show Code</strong>.</li>
+        <li>On another iPhone or iPad, open Home › <strong>+</strong> › Add Accessory and point it at the QR code on screen. Or tap <strong>Add to Home</strong>, which copies the code and opens Apple&rsquo;s add-accessory screen: choose More options and paste the code.</li>
+      </ol>
+    </details>
+    <details>
+      <summary>After re-pairing, Pairbook says the accessory isn&rsquo;t in Apple Home</summary>
+      <p>Apple Home gives a re-paired accessory a new identity. Pairbook notices and offers to re-link the code to the new one: tap <strong>Re-link</strong>.</p>
+    </details>
+
+    <h2>Sync, lock and purchases</h2>
+    <details>
+      <summary>Sync isn&rsquo;t working</summary>
+      <ul>
+        <li>Sync is part of Pairbook Pro. Check Settings › Sync with iCloud is on, on every device.</li>
+        <li>Check you&rsquo;re signed in to the same Apple Account in iCloud on each device, with iCloud Drive on.</li>
+        <li>Open Pairbook on each device and wait a minute. Settings shows the sync status.</li>
+      </ul>
+    </details>
+    <details>
+      <summary>Can I turn off the lock?</summary>
+      <p>Yes: Settings › Privacy › Require Face ID (or Touch ID). The lock needs a device passcode to work.</p>
+    </details>
+    <details>
+      <summary>I bought Pro on another device</summary>
+      <p>Pro covers iPhone, iPad and Mac with the same Apple Account, and Family Sharing. If it doesn&rsquo;t appear, open Settings › Restore Purchases.</p>
+    </details>
+    <details>
+      <summary>What happens if I have more than 15 codes on the free plan?</summary>
+      <p>Nothing is hidden or deleted. You just can&rsquo;t add more codes until you upgrade.</p>
+    </details>
+
+    <h2>For App Review</h2>
+    <p>A printable <a href="demo-sticker.pdf">demo sticker</a> carries an invented code that Pairbook recognises as a demo. It can&rsquo;t pair any accessory.</p>
+  </div>
+</main>
+<div class="wrap">
+  <footer class="site">
+    <p>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="https://apps.apple.com/app/id6829226607">Housecall</a>
+    </p>
+    <p>© 2026 Mark Tiddy. Pairbook works with Apple Home. Apple, HomeKit and Apple Home are trademarks of Apple Inc. Pairbook isn&rsquo;t made or endorsed by Apple.</p>
+  </footer>
+</div>
+</body>
+</html>
