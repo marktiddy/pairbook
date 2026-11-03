@@ -1,7 +1,12 @@
 /* Pairbook site. Indigo to match the app icon. Colours pass WCAG AA in light and dark. */
 :root {
   --brand: #4338CA;
+  --brand-hover: #3730A3;
   --brand-soft: #EEF0FF;
+  --brand-soft-hover: #E0E3FF;
+  --button-bg: #4338CA;
+  --button-bg-hover: #3730A3;
+  --button-text: #FFFFFF;
   --text: #1C1C1E;
   --muted: #5E5E63;
   --bg: #FFFFFF;
@@ -12,7 +17,12 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --brand: #A5B4FC;
+    --brand-hover: #C7D2FE;
     --brand-soft: #1E1B4B;
+    --brand-soft-hover: #312E81;
+    --button-bg: #A5B4FC;
+    --button-bg-hover: #C7D2FE;
+    --button-text: #1C1C1E;
     --text: #F5F5F7;
     --muted: #AEAEB2;
     --bg: #000000;
@@ -27,22 +37,28 @@ body {
   background: var(--bg);
 }
 a { color: var(--brand); }
-a:focus-visible, .button:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
+a:not(.button):hover { color: var(--brand-hover); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:focus-visible, .button:focus-visible, details summary:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
 .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 header.site { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
 header.site .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 20px; color: var(--text); text-decoration: none; }
+header.site .brand:hover { color: var(--brand-hover); }
 header.site .brand img { width: 40px; height: 40px; border-radius: 10px; }
-header.site nav a { margin-left: 20px; text-decoration: none; color: var(--muted); font-weight: 500; }
-header.site nav a:hover { color: var(--brand); }
+header.site nav a { display: inline-flex; align-items: center; min-height: 24px; margin-left: 20px; padding: 4px 0; text-decoration: none; color: var(--muted); font-weight: 500; }
+header.site nav a:hover { color: var(--brand-hover); text-decoration: underline; }
+header.site nav a[aria-current="page"] { color: var(--text); font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+header.site nav a[aria-current="page"]:hover { color: var(--brand-hover); }
 .hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; padding: 48px 0 64px; }
 .hero h1 { font-size: clamp(36px, 6vw, 56px); line-height: 1.08; margin: 0 0 16px; letter-spacing: -0.02em; }
 .hero p.lead { font-size: 21px; color: var(--muted); margin: 0 0 28px; }
 .hero img.phone { width: 100%; height: auto; max-width: 340px; justify-self: center; border-radius: 36px; box-shadow: 0 20px 60px rgba(67, 56, 202, 0.25); }
 .button {
-  display: inline-block; padding: 14px 26px; border-radius: 999px; font-weight: 600; text-decoration: none;
-  background: #4338CA; color: #FFFFFF;
+  display: inline-block; padding: 12px 24px; border: 2px solid transparent; border-radius: 999px; font-weight: 600; text-decoration: none;
+  background: var(--button-bg); color: var(--button-text);
 }
-.button.secondary { background: var(--brand-soft); color: var(--brand); margin-left: 8px; }
+.button:hover { background: var(--button-bg-hover); }
+.button.secondary { background: var(--brand-soft); border-color: var(--brand); color: var(--brand); margin-left: 8px; }
+.button.secondary:hover { background: var(--brand-soft-hover); }
 .note { font-size: 14px; color: var(--muted); margin-top: 12px; }
 section { padding: 56px 0; }
 section h2 { font-size: clamp(28px, 4vw, 38px); margin: 0 0 12px; letter-spacing: -0.01em; }
@@ -64,10 +80,12 @@ section p.intro { color: var(--muted); font-size: 19px; max-width: 680px; margin
 .prose h2 { font-size: 24px; margin-top: 36px; }
 .prose .updated { color: var(--muted); }
 details { background: var(--card); border-radius: 14px; padding: 16px 20px; margin-bottom: 12px; }
-details summary { font-weight: 600; cursor: pointer; }
+details summary { font-weight: 600; cursor: pointer; border-radius: 6px; }
+details summary:hover { color: var(--brand-hover); text-decoration: underline; text-underline-offset: 3px; }
 details p, details ol, details ul { color: var(--muted); }
 footer.site { border-top: 1px solid var(--card); padding: 32px 0 48px; color: var(--muted); font-size: 15px; }
-footer.site a { color: var(--muted); margin-right: 16px; }
+footer.site a { display: inline-block; min-height: 24px; padding: 4px 0; color: var(--muted); margin-right: 16px; }
+footer.site a:hover { color: var(--brand-hover); }
 .skip { position: absolute; left: -999px; }
 .skip:focus { left: 16px; top: 16px; background: var(--bg); padding: 8px 12px; z-index: 10; }
 @media (max-width: 760px) {
