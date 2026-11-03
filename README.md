@@ -4,23 +4,18 @@ Static site for GitHub Pages: `index.html` (landing page), `privacy.html` (the p
 app link to), `support.html` (the support URL), and `demo-sticker.pdf` (App Review). No build step, no
 JavaScript, no analytics or cookies (the app's "Data Not Collected" promise applies to the site too).
 
-## Publish (about 5 minutes)
+## Publish
 
-1. On GitHub, create a public repository named **`pairbook`** (the app links to
-   `https://marktiddy.github.io/pairbook/privacy.html` and `.../support.html`, so the name matters).
-2. In this folder:
-   ```sh
-   git init -b main
-   git add .
-   git commit -m "Pairbook website"
-   git remote add origin git@github.com:marktiddy/pairbook.git
-   git push -u origin main
-   ```
-3. On GitHub: the repository › Settings › Pages › Build and deployment › Source: **Deploy from a branch**,
-   Branch: **main**, folder **/ (root)** › Save. The site appears at `https://marktiddy.github.io/pairbook/`
-   within a minute or two.
-4. Check both links open: `/privacy.html` and `/support.html`. Use them in App Store Connect (Privacy Policy URL,
+The site is deployed by GitHub Actions (`.github/workflows/pages.yml`) on every push to `main`, or manually from
+the Actions tab. There is no build step; the workflow uploads the repository root as the Pages artifact.
+
+1. On GitHub: the repository › Settings › Pages › Build and deployment › Source: **GitHub Actions**.
+2. Push to `main`. The site appears at `https://marktiddy.github.io/pairbook/` within a minute or two.
+3. Check both links open: `/privacy.html` and `/support.html`. Use them in App Store Connect (Privacy Policy URL,
    Support URL).
+
+The site lives at the repository root rather than in a `site/` folder because this repository contains only the
+website. If the site is later moved into a subdirectory, update `path` in the workflow to match.
 
 ## Before launch
 
