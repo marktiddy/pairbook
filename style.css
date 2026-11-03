@@ -37,7 +37,7 @@ header.site nav a:hover { color: var(--brand); }
 .hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; padding: 48px 0 64px; }
 .hero h1 { font-size: clamp(36px, 6vw, 56px); line-height: 1.08; margin: 0 0 16px; letter-spacing: -0.02em; }
 .hero p.lead { font-size: 21px; color: var(--muted); margin: 0 0 28px; }
-.hero img.phone { width: 100%; max-width: 340px; justify-self: center; border-radius: 36px; box-shadow: 0 20px 60px rgba(67, 56, 202, 0.25); }
+.hero img.phone { width: 100%; height: auto; max-width: 340px; justify-self: center; border-radius: 36px; box-shadow: 0 20px 60px rgba(67, 56, 202, 0.25); }
 .button {
   display: inline-block; padding: 14px 26px; border-radius: 999px; font-weight: 600; text-decoration: none;
   background: #4338CA; color: #FFFFFF;
@@ -54,7 +54,7 @@ section p.intro { color: var(--muted); font-size: 19px; max-width: 680px; margin
 .card .icon { font-size: 28px; margin-bottom: 8px; display: block; }
 .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
 .shots figure { margin: 0; }
-.shots img { width: 100%; border-radius: 28px; display: block; }
+.shots img { width: 100%; height: auto; border-radius: 28px; display: block; }
 .shots figcaption { text-align: center; color: var(--muted); font-size: 15px; margin-top: 10px; }
 .pricing { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .pricing .card.pro { outline: 2px solid var(--brand); }
